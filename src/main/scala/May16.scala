@@ -11,12 +11,18 @@ package com.uic.cs474
  */
 
 object May16:
-  @main def RunMay16 =
-    lazy val somescope = {
+  val j = 3
+  def f(i:Int):Int = i*j
+  def g(proc: Int=>Int):Int = proc(3)
+  @main def RunMay16=//(input:String) =
+    //require(input != null)
+    lazy val somescopeRenamed = {
       val george = "student"
       println(george)
       george.length
     }
-    //somescope = "mark"
-    println(somescope)
-    println(somescope)
+
+    println(g(f))
+    //somescopeRenamed = "mark"
+    println(somescopeRenamed)
+    println(somescopeRenamed)
