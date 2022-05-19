@@ -12,7 +12,7 @@ public class SomeSemanticallyMeaninglessCode {
     public int getVint() {
         int c = 0;
         {
-            int c1 = 3;
+            float c1 = 3;
         }
         class C {
             int c = 1;

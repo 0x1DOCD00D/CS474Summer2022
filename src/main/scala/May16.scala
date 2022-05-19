@@ -22,7 +22,7 @@ object May16:
       george.length
     }
 
-    println(g(f))
+//    println(g(f))
     //somescopeRenamed = "mark"
     println(somescopeRenamed)
     println(somescopeRenamed)
