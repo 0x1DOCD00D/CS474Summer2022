@@ -12,12 +12,33 @@ class Parent{
     int field = 1;
 }
 
+interface Mother{
+    boolean giveBirth();
+}
+interface Father{
+    boolean provideGrowth();
+}
+
+class ProperChild implements Father, Mother{
+    @Override
+    public boolean giveBirth() {
+        return false;
+    }
+
+    @Override
+    public boolean provideGrowth() {
+        return false;
+    }
+}
+
 class Child extends Parent {
     int field = 2;
 }
 
 public class FieldExperiment {
     public static void main(String[] args) {
+        Father father = new ProperChild();
+        father.provideGrowth();
         Parent p1 = new Parent();
         Child c1 = new Child();
         Parent c2 = new Child();
