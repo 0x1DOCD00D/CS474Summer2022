@@ -36,9 +36,14 @@ class Child extends Parent {
 }
 
 public class FieldExperiment {
+    public String meth(Father fo){
+        return fo.toString();
+    }
     public static void main(String[] args) {
         Father father = new ProperChild();
         father.provideGrowth();
+        System.out.println( new FieldExperiment().meth(father));
+        System.out.println( new FieldExperiment().meth(new ProperChild()));
         Parent p1 = new Parent();
         Child c1 = new Child();
         Parent c2 = new Child();
