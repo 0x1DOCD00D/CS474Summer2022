@@ -8,21 +8,20 @@ package com.uic.cs474;/*
  *
  */
 
-public class MoreScopes {
-    static {
-       VALUE = 10;//line 3
+public class IncDecProgram {
+    public static int f(int j) {
+        if (j == 3) { //line 1
+            j = --j + ++j; //line 2
+        }
+        return j++; //line 3
     }
-    public MoreScopes(int x) {
-        VALUE = x;
-    }
-    static {
-        VALUE = 30;//line 7
-        { VALUE = 1;}
-    }
-    public static int VALUE = 15;
 
     public static void main(String[] args) {
-        new MoreScopes(5); //line 10
-        System.out.println(MoreScopes.VALUE);
+        int j = 0, sum = 0;
+        for (int i = 0; i < 5; i++) {
+            j = i * f(j); //line 4
+            sum += j; //line 5
+        }
+        System.out.println(j + ", " + sum);
     }
 }

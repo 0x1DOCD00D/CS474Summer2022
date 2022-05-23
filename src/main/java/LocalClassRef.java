@@ -8,21 +8,13 @@ package com.uic.cs474;/*
  *
  */
 
-public class MoreScopes {
-    static {
-       VALUE = 10;//line 3
+public class LocalClassRef {
+    public LocalClassRef getID() {
+        class Subclass extends LocalClassRef { }
+        LocalClassRef instanceS = new Subclass();
+        return instanceS.getID();
     }
-    public MoreScopes(int x) {
-        VALUE = x;
-    }
-    static {
-        VALUE = 30;//line 7
-        { VALUE = 1;}
-    }
-    public static int VALUE = 15;
-
     public static void main(String[] args) {
-        new MoreScopes(5); //line 10
-        System.out.println(MoreScopes.VALUE);
+        System.out.println(new LocalClassRef().getID());
     }
 }
