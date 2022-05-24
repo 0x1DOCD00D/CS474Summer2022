@@ -29,4 +29,4 @@ object May24:
       if db.connect("user=nygel;pswd=1334") then
         db.executeQuery(sql)
 
-  @main def runMay24(args:List[String]) = new UserLhs(new MySqlDb)
+  @main def runMay24 = new UserLhs(new MySqlDb)
