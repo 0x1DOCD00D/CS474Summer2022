@@ -14,4 +14,5 @@ import scala.io.Source
 
 object May23:
  // val v: 3 = Source.stdin.mkString(", ").toInt
-  @main def runMay23 = println(v)
+ val v : 3 = 3
+ @main def runMay23 = println(v)
