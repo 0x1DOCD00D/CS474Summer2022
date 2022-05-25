@@ -20,9 +20,19 @@ object May24:
     def connect(login: String): Boolean
     def executeQuery(sql: String): String
 
+  trait NewDbWithOptimization extends DatabaseOps:
+    def optimize():Boolean
+
   class MySqlDb extends DatabaseOps:
     def connect(login: String): Boolean = true
+    def connect(login: String, offline: Boolean): Boolean = true
     def executeQuery(sql: String): String = "mysql result"
+
+  trait DbUser
+  class UserLhsWithOptim(val db: NewDbWithOptimization):
+    def DoStuff(sql:String) =
+      if db.connect("user=nygel;pswd=1334") then
+        db.executeQuery(sql)
 
   class UserLhs(val db: DatabaseOps):
     def DoStuff(sql:String) =
