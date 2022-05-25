@@ -9,6 +9,7 @@ package com.uic.cs474;/*
  */
 
 public class May25_Lecture5 {
+    public int mainField = 3;
     interface George {
         class X{
             public int field = 5;
@@ -16,6 +17,12 @@ public class May25_Lecture5 {
         X createHuman();
     }
 
+/*    class Derived {
+        public int mainField = 3;
+        void f(){
+            May25_Lecture5.super.mainField = 5;
+        }
+    }*/
     interface EmptyInter{}
     interface XWithDefault{
         default void f(){
@@ -65,6 +72,7 @@ public class May25_Lecture5 {
     class VW implements W, V {
         @Override
         public void g() {
+            super.toString();
             System.out.println("g is called");
         }
 
@@ -80,6 +88,7 @@ public class May25_Lecture5 {
         }
     }
     public static void main(String[] args) {
+//        May25_Lecture5 obj = (May25_Lecture5)(new May25_Lecture5().this);
         VW vw = new May25_Lecture5(). new VW();
         V v = vw;
         W w = vw;
