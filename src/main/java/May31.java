@@ -11,18 +11,38 @@ interface Runnable {
     void run();
 }
 public class May31 {
+    static int field = 100;
     Runnable r1 = ()->System.out.println(this.toString());
 	Runnable r2 = ()->System.out.println(toString1());
+    interface OhIGottaDoIt {
+        int f();
+    }
+
+    int hof(OhIGottaDoIt someFunc){
+        System.out.println(someFunc.toString() + ", " + someFunc.f());
+        return someFunc.f();
+    }
+
+    OhIGottaDoIt returnLambdaFunc() {
+        return ()->{
+            System.out.println("Howdy from the returned function!");
+            return 10;
+        };
+    }
 
     public String toString1(){return "Howdy!";}
 
     public static void main(String[] args) {
 //        new May31().r1.run();
 //        new May31().r2.run();
-        interface OhIGottaDoIt {
-            int f();
-        }
-        OhIGottaDoIt lf = ()->{return 2;};
+
+//        new May31().hof(new May31().returnLambdaFunc());
+
+        new May31().hof(()->{
+            int x = 5;
+            return x+field;});
+/*        OhIGottaDoIt lf = ()->{return 2;};
         System.out.println(lf.f());
+*/
     }
 }

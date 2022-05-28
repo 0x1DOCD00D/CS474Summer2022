@@ -12,6 +12,14 @@ package com.uic.cs474
 
 object May31FpScala:
   @main def runMay31 =
+//    def ff(fp: same signature as ff): same signature as fp
+    def ff[T](fp: T=>T): T=>T = (i:T)=>fp(i)
+
+    println(ff((x:Int)=>x+1)(2))
+    val threetimesff = ff(ff(ff((x:Int)=>x+1)))
+    println(threetimesff(2))
+
+
     val yourCustomOOImplVariable = new Function2[Int, Int, Unit]{
       override def apply(v1: Int, v2: Int): Unit = println(s"sum[$v1, $v2]= ${v1+v2}")
     }
