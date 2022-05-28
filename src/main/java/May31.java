@@ -17,7 +17,7 @@ public class May31 {
     public String toString1(){return "Howdy!";}
 
     public static void main(String[] args) {
-        new May31().r1.run();
-        new May31().r2.run();
+//        new May31().r1.run();
+//        new May31().r2.run();
     }
 }
