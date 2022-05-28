@@ -35,9 +35,9 @@ object May25:
   trait Lunette
 
   //class StudentWithHat extends Hat
-  val george = new Student with Hat
+  val george = new Student with Hat with Mask
 
-
+//  val qwithdouble = new BasicIntQueue with Doubling with Increment with NoNegative
 
   class ExperimentWithThisSuper {
     val ohmy = {

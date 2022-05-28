@@ -7,21 +7,17 @@ package com.uic.cs474;/*
  *   either express or implied.  See the License for the specific language governing permissions and limitations under the License.
  *
  */
+interface Runnable {
+    void run();
+}
+public class May31 {
+    Runnable r1 = ()->System.out.println(this.toString());
+	Runnable r2 = ()->System.out.println(toString1());
 
-public class IncDecProgram {
-    public static int f(int j) {
-        if (j == 3) { //line 1
-            j = --j + ++j; //line 2
-        }
-        return ++j; //line 3
-    }
+    public String toString1(){return "Howdy!";}
 
     public static void main(String[] args) {
-        int j = 0, sum = 0;
-        for (int i = 0; i < 5; i++) {
-            j = i * f(j); //line 4
-            sum += j; //line 5
-        }
-        System.out.println(j + ", " + sum);
+        new May31().r1.run();
+        new May31().r2.run();
     }
 }
