@@ -19,5 +19,10 @@ public class May31 {
     public static void main(String[] args) {
 //        new May31().r1.run();
 //        new May31().r2.run();
+        interface OhIGottaDoIt {
+            int f();
+        }
+        OhIGottaDoIt lf = ()->{return 2;};
+        System.out.println(lf.f());
     }
 }

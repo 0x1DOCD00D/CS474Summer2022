@@ -17,7 +17,7 @@ object May31FpScala:
     }
     val intval = 10
     val f = (a:Int, b:Int)=>println(s"sum[$a, $b]= ${a+b}")
-//    println((a:Int, b:Int)=>println(s"sum[$a, $b]= ${a+b}"))
+    println((a:Int, b:Int)=>println(s"sum[$a, $b]= ${a+b}"))
 //    println(new AnyRef())
     println(f(3,7))
     println(yourCustomOOImplVariable(3,7))
