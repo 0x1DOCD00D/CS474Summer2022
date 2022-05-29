@@ -16,7 +16,7 @@ object May31FpScala:
     def ff[T](fp: T=>T): T=>T = (i:T)=>fp(i)
 
     println(ff((x:Int)=>x+1)(2))
-    val threetimesff = ff(ff(ff((x:Int)=>x+1)))
+    val threetimesff = ff(ff(ff((x:Int)=>x)))
     println(threetimesff(2))
 
 

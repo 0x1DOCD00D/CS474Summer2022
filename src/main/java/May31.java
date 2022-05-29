@@ -14,11 +14,28 @@ public class May31 {
     static int field = 100;
     Runnable r1 = ()->System.out.println(this.toString());
 	Runnable r2 = ()->System.out.println(toString1());
+
+    boolean notpure(){
+        if(++field > 100){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    boolean notpureeq(){
+        if(++field <= 100){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     interface OhIGottaDoIt {
         int f();
     }
 
     int hof(OhIGottaDoIt someFunc){
+        //notpure() -> true
         System.out.println(someFunc.toString() + ", " + someFunc.f());
         return someFunc.f();
     }
