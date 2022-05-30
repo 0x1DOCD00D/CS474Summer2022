@@ -11,10 +11,13 @@ package com.uic.cs474
  */
 
 object June2:
+  def infInts(iv: Int): LazyList[Int] = iv #:: infInts(iv+1)
+
   def map[A,B](container: List[A])(f: A => B): List[B] =
     container match
       case Nil => Nil
       case head :: tail => f(head) :: map(tail)(f)
 
   @main def runJune2 =
+    println(infInts(0).take(10).toList)
     println(map(List(1,2,3))((elem:Int)=>elem.toString.concat((elem+1).toString)))
