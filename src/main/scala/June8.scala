@@ -11,7 +11,17 @@ package com.uic.cs474
  */
 
 object June8:
+//  case class Record4Thunking(thunk: Function0[Int])
+  case class Record4Thunking(thunk: () => Int)
+
+  def eval(inst: Record4Thunking): Int =
+    inst.thunk()
+
   val listMilFs = List.fill(10000000)((i:Int)=>i+1)
   val result = listMilFs.foldLeft(0)((acc, f) => f(acc))
   val composedFunc = listMilFs.foldLeft(((i:Int)=>i))((acc, elem)=> acc andThen(elem))
-  @main def runJune8 = println(result)
+  @main def runJune8 =
+    val x = 3
+    val record = Record4Thunking(()=>x+5)
+    println(eval(record))
+//    println(composedFunc(0))
