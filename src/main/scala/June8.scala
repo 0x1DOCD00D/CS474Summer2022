@@ -12,6 +12,7 @@ package com.uic.cs474
 
 object June8:
 //  case class Record4Thunking(thunk: Function0[Int])
+  val lst = List(1, 2.0, "george")
   case class Record4Thunking(thunk: () => Int)
 
   def eval(inst: Record4Thunking): Int =
