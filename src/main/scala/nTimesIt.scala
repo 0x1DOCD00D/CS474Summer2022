@@ -17,5 +17,24 @@ object nTimesIt:
       case _ => nTimes(f(input))(f)(N-1)
     }
 
+  def nTimes1[T](n: Int)(f: T=>T): T=>T =
+    if n <= 0 then g => g
+    else i=>nTimes1(n-1)(f)(f(i))
+
+  def nX[T](f: T=>T): T=>T = i=>nX(f)(f(i))
+
   @main def runNtimes =
+    val paramf: Int => Int = {
+      println("invoke f")
+      (i: Int) => {
+        println(s"[f] = {i+1}")
+        i + 1
+      }
+    }
+    val f1 = (i:Int)=> nX(paramf)(paramf(i))
+    println(f1(3))
+/*
     println(nTimes(10)((i:Int)=>i+1)(3))
+    println(nTimes1(10)((i:Int)=>i+1)(3))
+*/
+
