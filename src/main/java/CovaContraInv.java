@@ -17,31 +17,14 @@ public class CovaContraInv {
 
     public void f(){
         List<? extends CC3> le = new ArrayList<CC5>();
-
-
 //        le.add(new CC4());
-
-
-
         le.add(null);
-
-
         CC1 c = le.get(0);
-
-
 //        CC5 c1 = le.get(0);
-
-
         ArrayList<? super CC3> ls = new ArrayList<CC2>();
-
-
         ls.get(0);
-
-
 //        CC1 cc = ls.get(0);
-
         ls.add(new CC3());
-
     }
 
     public static void main(String[] args) {
